@@ -5,9 +5,9 @@ author: juanjperez
 ---
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-# LwM2M 1.0 to Azure IoT Hub Bridge Sample
+# LwM2M 1.0 to Azure IoT Hub Bridge Sample #
 
-## Overview 
+## Overview ##
 
 The LwM2M to Azure IoT Hub bridge sample provides a model for how to enable LwM2M 1.0 devices to leverage capabilities of IoT Hub without any modifications.
 
@@ -17,13 +17,13 @@ This sample also showcases how products that host LwM2M servers can interface wi
 
 ![LwM2M IoT Hub Bridge Architecture Diagram](Docs/BridgeArchDiagram.png)
 
-### LwM2M Device
+### LwM2M Device ###
 
 The LwM2M device in this sample uses the [LwM2M Node Lib](https://github.com/telefonicaid/lwm2m-node-lib) Node.js library to register as a device with the LwM2M server that is hosted inside the bridge.
 
 This device can be replaced with a physical or simualted device that uses LwM2M, including devices that use [Eclipse Wakaama](https://github.com/eclipse/wakaama) or [Eclipse Leshan](https://github.com/eclipse/leshan).
 
-### Bridge
+### Bridge ###
 
 The bridge component provides the following blocks that interact to enable communications from LwM2M devices to IoT Hub.
 
@@ -33,11 +33,11 @@ The bridge component provides the following blocks that interact to enable commu
 
 - Device Map: A JSON object in lwm2mgw.js maps a LwM2M device ID to a IoT Hub device connection string.  When a LwM2M device registers with the LwM2M server, the register handler uses the device map to find the corresponding IoT Hub device connection string.  
 
-### Back-end application
+### Back-end application ###
 
 The back-end application uses the IoT Hub service client and uses direct methods to trigger LwM2M operations on the bridge.
 
-## Setup and config
+## Setup and config ##
 
 1. Create identity for devices in IoT Hub using device explorer.  You can use iothubDevice1 and iothubDevice2 to show the difference between LwM2M devices and IoT Hub devices.
 
@@ -61,7 +61,7 @@ The back-end application uses the IoT Hub service client and uses direct methods
   
   ```npm install azure-iot-device```
   
-## Running through the scenario
+## Running through the scenario ##
 
 1. Start the bridge, which will start the LwM2M server and listen for LwM2M devices to register.
 
@@ -75,7 +75,7 @@ The back-end application uses the IoT Hub service client and uses direct methods
 
   ``` node iotbackend/backend.js iothubDevice1 ``` 
 
-## Current gaps that need work
+## Current gaps that need work ##
 
 The following are areas for improvement for this sample:
 
